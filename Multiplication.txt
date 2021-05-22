@@ -1,0 +1,37 @@
+//Program Multiplication.asm
+//Multiplies the value in RAM[0] with the value of RAM[1]
+//The final result is stored in RAM[2]
+//All values start == 0 
+
+	@0
+	M=D+1 //Gives the value of D(=0)+1 to RAM[0]. RAM[0] is now, therefore, =1
+
+	@0
+	D=M+1 //RAM[0] is now 1. This step assigns the value of RAM[0](=1)+1 to D, resulting in 2. Therefore, D is now = 2.
+
+	@0 
+	M=D //Gives RAM[0] the current value of D (2)
+
+	@1
+	M=D+1 //Gives RAM[1] the current value of D (2) and adds 1 to it. Therefore, now RAM[1] = 3 
+
+	@2
+	M=D //Gives the current value of D (2) to RAM[2]. RAM[2] is now, therefore, 2. 
+
+	@2
+	M=D+M //Adds the current values of D (2) and RAM[2] (2). Therefore, RAM[2] is now 4.
+
+	@2
+	M=D+M //Repeats the procedure above: adds the current values of D (2) and RAM[2] (4) together. The value of RAM[2] is now 6. This finishes the computation part of the program
+
+	@14
+	0;JMP //To avoid that the emulator keps running indefinietely, "0;JMP" is added here.
+
+
+
+
+     
+	
+
+
+	
